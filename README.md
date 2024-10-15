@@ -1,2 +1,2 @@
-# Automatic_Comment_Sentiment_Dêtction
+# Automatic_Comment_Sentiment_Detection
 Using machine learning
