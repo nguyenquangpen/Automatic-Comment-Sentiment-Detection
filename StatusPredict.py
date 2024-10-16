@@ -61,6 +61,25 @@ def pridiction_report(text):
     text = text.translate(str.maketrans('', '', string.digits))
     # remove line breaks
     text = text.replace('\n', '')
-    data_tidf = vectorizer.transform([text])
-    preidc = model.predict(data_tidf)
-    return preidc
+    return text
+
+def predict_comment(data):
+    data = pridiction_report(data)
+    data_tidf = vectorizer.transform([data])
+    prediction = model.predict(data_tidf)
+    
+    print(data)
+    if prediction[0] == 0:
+        print("Bình luận tiêu cực.")
+    elif prediction[0] == 1:
+        print("Bình luận bình thường")
+    else:
+        print("Bình luận tích cực")
+
+data1 = 'Sản Phẩm dở tệ, không đúng như mẫu, không nên mua'
+data2 = 'Đúng Ý, sản phẩm tốt, giá cả hợp lý'
+
+predict_comment(data1)
+print('------------------------------------')
+predict_comment(data2)
+
