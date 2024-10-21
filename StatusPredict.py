@@ -10,7 +10,6 @@ from sklearn.metrics import classification_report
 
 df = pd.read_csv('D:/Academic/lap-trinh/Project/PycharmProject/Automatic_Comment_Sentiment_Detection/Data/train.csv', names=['label', 'Comment'])
 
-#viet hoa, so, ky tu xuong dong
 # print(df.isnull().sum())
 
 def split_agglutinate(data):
@@ -76,10 +75,13 @@ def predict_comment(data):
     else:
         print("Bình luận tích cực")
 
+print('------------------------------------')
 data1 = 'Sản Phẩm dở tệ, không đúng như mẫu, không nên mua'
 data2 = 'Đúng Ý, sản phẩm tốt, giá cả hợp lý'
 
 predict_comment(data1)
 print('------------------------------------')
 predict_comment(data2)
+print('------------------------------------')
+
 
